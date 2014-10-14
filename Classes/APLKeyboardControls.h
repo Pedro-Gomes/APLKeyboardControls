@@ -10,6 +10,7 @@ extern NSString* const APLKeyboardControlsInputDidBeginEditingNotification;
 
 @property (nonatomic, strong) NSArray* inputFields;
 @property (nonatomic, assign) BOOL hasPreviousNext;
+@property (nonatomic, assign) BOOL shouldShowAccessory;
 @property (nonatomic, strong) UIBarButtonItem* previousButton;
 @property (nonatomic, strong) UIBarButtonItem* nextButton;
 @property (nonatomic, strong) UIBarButtonItem* doneButton;

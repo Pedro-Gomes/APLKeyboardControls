@@ -99,7 +99,9 @@ NSString* const APLKeyboardControlsInputDidBeginEditingNotification = @"APLKeybo
     
     for (id input in _inputFields) {
         if ([input respondsToSelector:@selector(setInputAccessoryView:)]) {
-            ((UITextField*)input).inputAccessoryView = self.inputAccessoryView;
+            if(self.shouldShowAccessory){
+                ((UITextField*)input).inputAccessoryView = self.inputAccessoryView;
+            }
             if ([input isKindOfClass:[UITextField class]]) {
                 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(inputDidBeginEditing:) name:UITextFieldTextDidBeginEditingNotification object:input];
             } else if ([input isKindOfClass:[UITextView class]]) {
